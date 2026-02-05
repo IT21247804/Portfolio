@@ -1,6 +1,32 @@
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animElements = document.querySelectorAll(
+      '.section-title, .timeline-item, .experience-card, .project-card, .skill-category, .award-item'
+    );
+    animElements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="App">
       {/* Navigation */}
@@ -37,7 +63,7 @@ function App() {
       {/* About Section */}
       <section id="about" className="about">
         <div className="container">
-          <h2>About Me</h2>
+          <h2 className="section-title">About Me</h2>
           <p>
             I'm a Software Engineer with a passion for building scalable, user-friendly applications. 
             With expertise in full-stack development, AI/ML, and mobile app development, I thrive on 
@@ -50,7 +76,7 @@ function App() {
       {/* Education Section */}
       <section id="education" className="education">
         <div className="container">
-          <h2>Education</h2>
+          <h2 className="section-title">Education</h2>
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-marker"></div>
@@ -83,7 +109,7 @@ function App() {
       {/* Experience Section */}
       <section id="experience" className="experience">
         <div className="container">
-          <h2>Work Experience</h2>
+          <h2 className="section-title">Work Experience</h2>
           <div className="experience-cards">
             <div className="experience-card">
               <div className="exp-header">
@@ -113,7 +139,7 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
-          <h2>Featured Projects</h2>
+          <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-header">
@@ -166,7 +192,7 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
-          <h2>Technical Skills</h2>
+          <h2 className="section-title">Technical Skills</h2>
           <div className="skills-grid">
             <div className="skill-category">
               <h3>Languages</h3>
@@ -251,7 +277,7 @@ function App() {
       {/* Awards Section */}
       <section id="awards" className="awards">
         <div className="container">
-          <h2>Awards & Recognition</h2>
+          <h2 className="section-title">Awards & Recognition</h2>
           <div className="awards-list">
             <div className="award-item">
               <h3>Best Research Paper Presentation Award</h3>
@@ -270,7 +296,7 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
-          <h2>Get In Touch</h2>
+          <h2 className="section-title">Get In Touch</h2>
           <p className="contact-intro">
             I'm always interested in hearing about new projects and opportunities. 
             Feel free to reach out!
