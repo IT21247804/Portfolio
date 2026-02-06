@@ -11,8 +11,9 @@ const Hero = () => {
           Passionate about AI, machine learning, and creating impactful software solutions.
         </p>
         <div className="hero-buttons">
-          <a href="#projects" className="btn btn-primary">View My Work</a>
-          <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+          <a href="/Pasan%20Baddewithana%20CV.pdf" download className="btn btn-primary">Download CV</a>
+          <a href="/PasanBaddewithana_resume.pdf" download className="btn btn-secondary">Download Resume</a>
+          <a href="#projects" className="btn btn-secondary">View Projects</a>
         </div>
       </div>
     </section>
