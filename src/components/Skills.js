@@ -1,14 +1,16 @@
 import React from 'react';
 import { 
   FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaLaravel, 
-  FaAws, FaDocker, FaGithub, FaGitAlt, FaBrain, FaCode 
+  FaAws, FaDocker, FaGithub, FaGitAlt, FaBrain, FaCode, FaAngular 
 } from 'react-icons/fa';
 import { 
-  SiCplusplus, SiMysql, SiDart, SiR, SiKotlin, SiNextdotjs, SiFlutter, 
+  SiCplusplus, SiMysql, SiDart, SiR, SiKotlin, SiNextdotjs, SiFlutter, SiOracle,
   SiMui, SiExpress, SiFastapi, SiFlask, SiPrisma, SiMongodb, SiSqlite, 
   SiTensorflow, SiKeras, SiOpencv, SiKubernetes, 
-  SiGooglecloud, SiPostman
+  SiGooglecloud, SiPostman, SiLangchain, SiRoboflow, SiSpringboot, SiTailwindcss, SiJupyter 
 } from 'react-icons/si';
+import { TbBrandReactNative } from "react-icons/tb";
+import { BsFiletypeSql } from "react-icons/bs";
 
 const Skills = () => {
   const skillCategories = [
@@ -19,7 +21,7 @@ const Skills = () => {
         { name: "Python", icon: FaPython, color: "#3776AB" },
         { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
         { name: "C/C++", icon: SiCplusplus, color: "#00599C" },
-        { name: "SQL", icon: SiMysql, color: "#4479A1" },
+        { name: "SQL", icon: BsFiletypeSql, color: "#4479A1" },
         { name: "Dart", icon: SiDart, color: "#0175C2" },
         { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
         { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
@@ -32,9 +34,11 @@ const Skills = () => {
       skills: [
         { name: "React", icon: FaReact, color: "#61DAFB" },
         { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-        { name: "React Native", icon: FaReact, color: "#61DAFB" }, // Reusing React icon
+        { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" }, // Reusing React icon
         { name: "Flutter", icon: SiFlutter, color: "#02569B" },
         { name: "Material-UI", icon: SiMui, color: "#007FFF" },
+        { name: "Angular", icon: FaAngular, color: "#DD0031" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
       ]
     },
     {
@@ -46,6 +50,7 @@ const Skills = () => {
         { name: "Flask", icon: SiFlask, color: "#FFFFFF" },
         { name: "Laravel", icon: FaLaravel, color: "#FF2D20" },
         { name: "Prisma", icon: SiPrisma, color: "#FFFFFF" },
+        { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
       ]
     },
     {
@@ -55,6 +60,7 @@ const Skills = () => {
         { name: "MySQL", icon: SiMysql, color: "#4479A1" },
         { name: "SQLite", icon: SiSqlite, color: "#003B57" },
         { name: "AWS S3", icon: FaAws, color: "#FF9900" },
+        { name: "Oracle", icon: SiOracle, color: "#FF9900" },
       ]
     },
     {
@@ -64,8 +70,9 @@ const Skills = () => {
         { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
         { name: "Keras", icon: SiKeras, color: "#D00000" },
         { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
-        { name: "Langchain", icon: FaBrain, color: "#FFFFFF" }, // Generic brain
-        { name: "Roboflow", icon: FaBrain, color: "#A020F0" }, // Generic brain
+        { name: "Langchain", icon: SiLangchain, color: "#FFFFFF" }, // Generic brain
+        { name: "Roboflow", icon: SiRoboflow, color: "#A020F0" }, // Generic brain
+        { name: "Jupyter", icon: SiJupyter, color: "#FF9900" },
       ]
     },
     {
