@@ -26,7 +26,11 @@ const Projects = () => {
               <li>Trained YOLO-based object detection model for accurate detection</li>
               <li>Built FastAPI backend and Next.js web frontend</li>
               <li>Developed Flutter mobile app for broader accessibility</li>
-              <li>Published research paper (IEEE)</li>
+              <li>
+                <a href="https://ieeexplore.ieee.org/document/11082052" target="_blank" rel="noopener noreferrer" style={{color: '#00d4ff', textDecoration: 'none'}}>
+                  Published research paper (IEEE) ↗
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -47,7 +51,11 @@ const Projects = () => {
               <li>Implemented OCR-based text extraction from images and documents</li>
               <li>Built community posting and commenting system</li>
               <li>Led team of four in third-year group project</li>
-              <li>Published research paper</li>
+              <li>
+                <a href="https://propulsiontechjournal.com/index.php/journal/article/view/2494" target="_blank" rel="noopener noreferrer" style={{color: '#00d4ff', textDecoration: 'none'}}>
+                  Published research paper ↗
+                </a>
+              </li>
             </ul>
           </div>
         </div>
