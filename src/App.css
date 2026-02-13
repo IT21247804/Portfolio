@@ -901,6 +901,13 @@ body {
   background-color: #0a0e27;
 }
 
+.experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
 .experience-cards {
   max-width: 1000px;
   margin: 0 auto;
@@ -1017,6 +1024,26 @@ body {
   animation: slideInLeft 0.6s ease-out 0.2s both;
 }
 
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.exp-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
 .exp-list {
   list-style: none;
   margin-top: 1.5rem;
@@ -1046,7 +1073,7 @@ body {
 }
 
 .exp-list li::before {
-  content: '▸';
+  content: '>';
   position: absolute;
   left: 0;
   color: var(--primary-color);
@@ -1070,6 +1097,137 @@ body {
 
 .experience-card:hover .exp-list li::before {
   transform: scale(1.3);
+}
+
+.experience-featured {
+  background: linear-gradient(160deg, rgba(0, 212, 255, 0.08), rgba(0, 0, 0, 0.05));
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.2), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.featured-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1.5rem;
+}
+
+.featured-header h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.featured-header p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  background: rgba(10, 14, 39, 0.8);
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.featured-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.featured-media {
+  width: 100%;
+  height: 110px;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0a0e27;
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.featured-card:hover .featured-media img {
+  transform: scale(1.05);
+}
+
+.featured-body h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-dark);
+}
+
+.featured-body p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+.featured-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.featured-tags span {
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--primary-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.featured-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 212, 255, 0.25);
 }
 
 /* Projects Section */
@@ -1827,6 +1985,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-media {
+    height: 160px;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
@@ -1865,3 +2035,4 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
